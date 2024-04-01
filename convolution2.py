@@ -2,9 +2,11 @@ import cv2
 import numpy as np
 
 img = cv2.imread('Images/cat_1.jpg')
-
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+
+cv2.imshow('Img', img)
 cv2.imshow('Gray', gray)
+
 def conv(img, kernel):
 
     img_h = img.shape[0]
@@ -32,5 +34,5 @@ def conv(img, kernel):
 kernel = np.ones((3, 3), dtype=np.float32) / 1000
 img_convolution = conv(gray, kernel)
 
-cv2.imshow('Images', img_convolution)
+cv2.imshow('Img Convolved', img_convolution)
 cv2.waitKey(0)
